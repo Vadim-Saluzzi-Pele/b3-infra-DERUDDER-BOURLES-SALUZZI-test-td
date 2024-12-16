@@ -66,6 +66,12 @@ def main():
     print(p1)
     print(p2)
     print(p3)
+    print("\njson:")
+    print(order.to_json())
+    print("\nfacture:")
+    print(order.generate_invoice())
+
+
 
 if __name__ == "__main__":
     main()
