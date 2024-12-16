@@ -25,6 +25,9 @@ class Cart:
             return "Your cart is empty."
         return "\n".join([f"{product.name} x {quantity} - {product.price * quantity}€"
                           for product, quantity in self.items.items()])
+    def clear_cart(self):
+        self.items.clear()
+        return "Cart has been cleared."
 
 
 
