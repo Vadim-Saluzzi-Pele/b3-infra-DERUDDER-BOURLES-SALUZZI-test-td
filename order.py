@@ -24,8 +24,7 @@ class Order:
 
     def view_order(self):
         return "\n".join([f"{product.name} x {quantity}" for product, quantity in self.items.items()]) + \
-
-               f"\nTotal: {self.total:.2f}€\nStatus: {self.status}\nOrder Date: {self.order_date.strftime('%Y-%m-%d %H:%M:%S')}"
+            f"\nTotal: {self.total:.2f}€\nStatus: {self.status}\nOrder Date: {self.order_date.strftime('%Y-%m-%d %H:%M:%S')}"
 
               
 
