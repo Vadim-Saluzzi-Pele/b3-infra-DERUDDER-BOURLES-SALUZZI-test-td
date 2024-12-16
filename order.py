@@ -1,4 +1,9 @@
 
+
+
+# order.py
+import json
+
 from cart import Cart
 from datetime import datetime
 
@@ -19,4 +24,25 @@ class Order:
 
     def view_order(self):
         return "\n".join([f"{product.name} x {quantity}" for product, quantity in self.items.items()]) + \
+
                f"\nTotal: {self.total:.2f}€\nStatus: {self.status}\nOrder Date: {self.order_date.strftime('%Y-%m-%d %H:%M:%S')}"
+
+              
+
+    def generate_invoice(self):
+        """Génère une facture simple avec les détails de la commande."""
+        invoice = "INVOICE\n" + "-" * 20 + "\n"
+        invoice += "\n".join([f"{product.name} x {quantity} = {product.price * quantity:.2f}€"
+                              for product, quantity in self.items.items()])
+        invoice += f"\n\nTotal: {self.total:.2f}€\n"
+        invoice += "-" * 20
+        return invoice
+
+    def to_json(self):
+        """Génère un récapitulatif de la commande au format JSON."""
+        order_data = {
+            "items": {product.name: quantity for product, quantity in self.items.items()},
+            "total": self.total
+        }
+        return json.dumps(order_data, indent=4)
+
