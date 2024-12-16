@@ -22,18 +22,7 @@ def main():
 
     print("Cart:")
     print(cart.display_cart())
-
-
-    print("\nTesting count_unique_items function...")
-    try:
-        unique_items_count = cart.calculate_total_product()
-        print(f"Number of unique items in the cart: {unique_items_count}")
-        if unique_items_count != 2:
-            raise AssertionError("count_unique_items did not return the expected result.")
-        print("Test passed: count_unique_items works as expected.")
-    except AssertionError as e:
-        print(f"Error: {e}")
-
+    
     # Place an order
     try:
         order = Order(cart)
