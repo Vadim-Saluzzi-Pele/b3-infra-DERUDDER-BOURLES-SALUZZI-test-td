@@ -30,3 +30,6 @@ class Cart:
         if not self.items:
             return "Your cart is empty."
         return len(self.items)
+    def clear_cart(self):
+        self.items.clear()
+        return "Cart has been cleared."

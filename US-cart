@@ -1,0 +1,37 @@
+1. Ajout de produit au panier
+En tant qu'utilisateur, je veux pouvoir ajouter un produit disponible au panier avec une quantité spécifiée afin de préparer mon achat.
+
+Critères d'acceptation :
+  -Le produit doit être ajouté au panier si le stock est suffisant.
+  -Une erreur doit s'afficher si la quantité demandée dépasse le stock disponible.
+
+2.Suppression de produit du panier
+En tant qu'utilisateur, je veux pouvoir retirer un produit spécifique de mon panier afin de modifier ma sélection avant de finaliser l'achat.
+
+Critères d'acceptation :
+  -Le produit est supprimé du panier s'il est présent.
+  -Une erreur doit s'afficher si le produit que je veux retirer n'est pas dans le panier.
+
+3.Affichage du contenu du panier
+En tant qu'utilisateur, je veux pouvoir visualiser les produits présents dans mon panier ainsi que leurs quantités et leurs prix totaux afin de vérifier ma commande.
+
+Critères d'acceptation :
+  -Si le panier est vide, un message clair doit s'afficher.
+  -Si le panier contient des articles, une liste formatée avec nom, quantité et prix total de chaque article doit être affichée.
+
+4.Calcul du montant total du panier
+En tant qu'utilisateur, je veux pouvoir voir le montant total de ma commande afin de connaître le coût total de mes achats.
+
+Critères d'acceptation :
+  -Le montant total doit être calculé en fonction des prix des produits et des quantités présentes dans le panier.
+5.Validation de la quantité en stock
+En tant qu'utilisateur, je veux être empêché d'ajouter au panier une quantité de produit supérieure à celle disponible afin d'éviter les erreurs liées au stock.
+
+Critères d'acceptation :
+  -Une erreur est déclenchée si la quantité demandée est supérieure au stock disponible.
+
+6.Panier vide
+En tant qu'utilisateur, je veux être informé lorsque mon panier est vide pour ne pas avoir de surprises au moment du paiement.
+
+Critères d'acceptation :
+  -Un message tel que "Votre panier est vide" doit s'afficher lorsque le panier est vide.
