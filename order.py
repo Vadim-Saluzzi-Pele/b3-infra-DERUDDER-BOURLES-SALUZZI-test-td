@@ -26,6 +26,10 @@ class Order:
         return "\n".join([f"{product.name} x {quantity}" for product, quantity in self.items.items()]) + \
             f"\nTotal: {self.total:.2f}€\nStatus: {self.status}\nOrder Date: {self.order_date.strftime('%Y-%m-%d %H:%M:%S')}"
 
+
+    def fidelity_points_order(self):
+        return round(self.total/10)
+
               
 
     def generate_invoice(self):
@@ -44,4 +48,3 @@ class Order:
             "total": self.total
         }
         return json.dumps(order_data, indent=4)
-
