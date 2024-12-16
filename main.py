@@ -6,17 +6,17 @@ def main():
 
 
     # Créer des produits
-    p1 = Product("Laptop", 1200.0, 5)
+    p1 = Product("Laptop", 1200.0, 20)
     p2 = Product("Headphones", 150.0, 20)
     p3 = Product("Mouse", 25.0, 50)
 
     # Initialiser un panier
     cart = Cart()
 
-    # Ajouter des produits au panier
+    
     try:
-        cart.add_product(p1, 3)
-        cart.add_product(p2, 4)
+        cart.add_product(p1, 2)
+        cart.add_product(p2, 2)
     except ValueError as e:
         print(f"Error: {e}")
 
@@ -66,6 +66,12 @@ def main():
     print(p1)
     print(p2)
     print(p3)
+    print("\njson:")
+    print(order.to_json())
+    print("\nfacture:")
+    print(order.generate_invoice())
+
+
 
 if __name__ == "__main__":
     main()
