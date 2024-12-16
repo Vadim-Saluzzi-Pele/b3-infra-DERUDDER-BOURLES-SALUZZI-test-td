@@ -17,3 +17,6 @@ class Order:
     def view_order(self):
         return "\n".join([f"{product.name} x {quantity}" for product, quantity in self.items.items()]) + \
                f"\nTotal: {self.total:.2f}€"
+
+    def fidelity_points_order(self):
+        return round(self.total/10)
