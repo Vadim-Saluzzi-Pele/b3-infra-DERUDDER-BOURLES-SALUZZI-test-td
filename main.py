@@ -31,7 +31,6 @@ def main():
     print("\nCart after clearing:")
     print(cart.display_cart())
 
-    # Placer une commande si le panier n'est pas vide
     try:
         if cart.items:  # Vérifier que le panier n'est pas vide
             order = Order(cart)
