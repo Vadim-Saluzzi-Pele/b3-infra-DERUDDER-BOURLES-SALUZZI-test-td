@@ -27,3 +27,10 @@ class Order:
         invoice += "-" * 20
         return invoice
 
+    def to_json(self):
+        """Génère un récapitulatif de la commande au format JSON."""
+        order_data = {
+            "items": {product.name: quantity for product, quantity in self.items.items()},
+            "total": self.total
+        }
+        return json.dumps(order_data, indent=4)
