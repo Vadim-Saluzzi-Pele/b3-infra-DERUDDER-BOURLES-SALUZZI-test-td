@@ -1,5 +1,5 @@
 # order.py
-
+import json
 from cart import Cart
 
 class Order:
@@ -17,3 +17,13 @@ class Order:
     def view_order(self):
         return "\n".join([f"{product.name} x {quantity}" for product, quantity in self.items.items()]) + \
                f"\nTotal: {self.total:.2f}€"
+
+    def generate_invoice(self):
+        """Génère une facture simple avec les détails de la commande."""
+        invoice = "INVOICE\n" + "-" * 20 + "\n"
+        invoice += "\n".join([f"{product.name} x {quantity} = {product.price * quantity:.2f}€"
+                              for product, quantity in self.items.items()])
+        invoice += f"\n\nTotal: {self.total:.2f}€\n"
+        invoice += "-" * 20
+        return invoice
+
